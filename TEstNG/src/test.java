@@ -20,23 +20,16 @@ import org.testng.annotations.Test;
 
 public class AppTest {
 
-	ChromeOptions chromeOptions = new ChromeOptions();
+	// ChromeOptions chromeOptions = new ChromeOptions();
 	WebDriver driver = null;
 
 	@BeforeTest
 	public void beforeTest() throws Exception {
 		
-		driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
-	}
-
-	/**
-	 * 
-	 */
-	@BeforeTest
-  public void setup() {
-    driver = new ChromeDriver();
+		driver = new RemoteWebDriver(new URL("http://localhost:4444"), driver);
+        //driver = new ChromeDriver();
     driver.get("https://flipkart.com");
-  }
+	}
 
   @Test
   public void findLinksOnPage() {
