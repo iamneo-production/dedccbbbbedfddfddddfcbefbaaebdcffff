@@ -1,20 +1,17 @@
 package com.example;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 import java.net.URL;
 
-import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeTest;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * Unit test for simple App.
@@ -28,13 +25,11 @@ public class AppTest
 	public void beforeTest() throws Exception {
 		
 		driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
+        driver = new ChromeDriver();
+        driver.get("https://flipkart.com");
 	}
 
-	@BeforeTest
-  public void setup() {
-    driver = new ChromeDriver();
-    driver.get("https://flipkart.com");
-  }
+	
 
   @Test
   public void findLinksOnPage() {

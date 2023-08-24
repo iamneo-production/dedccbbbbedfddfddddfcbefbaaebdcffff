@@ -27,6 +27,11 @@
       <type>pom</type>
     </dependency>
 
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version> <!-- Use the appropriate version -->
+</dependency>
 
     <dependency>
       <groupId>org.testng</groupId>
