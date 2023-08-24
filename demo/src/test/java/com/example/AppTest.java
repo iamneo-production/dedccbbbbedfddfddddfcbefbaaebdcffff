@@ -3,11 +3,9 @@ package com.example;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.testng.annotations.Test;
 import java.net.URL;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
@@ -17,9 +15,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 /**
  * Unit test for simple App.
