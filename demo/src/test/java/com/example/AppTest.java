@@ -1,5 +1,14 @@
 package com.example;
 
+import org.testng.annotations.Test;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,14 +19,18 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AppTest {
-  /**
- *
- */
-WebDriver driver;
 
-  @BeforeTest
+	ChromeOptions chromeOptions = new ChromeOptions();
+	WebDriver driver = null;
+
+	@BeforeTest
+	public void beforeTest() throws Exception {
+		
+		driver = new RemoteWebDriver(new URL("http://localhost:4444"), chromeOptions);
+	}
+
+	@BeforeTest
   public void setup() {
-    System.setProperty("webdriver.chrome.driver", "http://localhost:4444");
     driver = new ChromeDriver();
     driver.get("https://flipkart.com");
   }
@@ -33,8 +46,10 @@ WebDriver driver;
     }
   }
 
-  @AfterTest
-  public void teardown() {
-    driver.quit();
-  }
+		
+	@AfterTest
+	public void afterTest() {
+		driver.quit();
+	}
+
 }
